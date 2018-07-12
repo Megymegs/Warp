@@ -3,5 +3,19 @@
 // Colours
 $primary-color:            #1f2020;
 $secondary-color:          #797979;
-$tertiary-color:           #a6b27c;
-$body-color:                 $primary-color;
+$tertiary-color:           #4c4c4e;
+$contrast-color:           #7426af;
+$box-shadows:               0 0 1px $contrast-color;
+
+// boot
+$body-color:                $primary-color;
+
+// Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 676px,
+  md: 868px,
+  lg: 1092px,
+  xl: 1400px
+);
+
