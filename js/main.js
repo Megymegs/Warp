@@ -12,14 +12,7 @@ $(document).ready(function() {
     language: {
         info: "_START_ to _END_ of _TOTAL_",
         search: "",
-        select: true,
-        paging: true,
-        paginate: {
-            first: '<i class="fa fa-fw fa-chevron-double-left">',
-            next: '<i class="fa fa-fw fa-chevron-right">',
-            previous: '<i class="fa fa-fw fa-chevron-left">',
-            last: '<i class="fa fa-fw fa-chevron-double-right">'
-        }
+        select: true
     }
   });
 });
@@ -60,3 +53,4 @@ $(document).ready(function() {
 function createCard() {
     $('.gift-card').css('display', 'block');
 }
+

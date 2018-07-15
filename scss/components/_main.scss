@@ -7,6 +7,8 @@
         border: 1px solid $tertiary-color;
         outline: none;
         box-shadow: none;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 
     .fa-filter, .fa-sort {
@@ -31,7 +33,7 @@
     width: 100%;
     outline: none;
     box-shadow: $box-shadows;
-    margin-left: auto;
+    margin: 2.5% 0 2% auto;
     padding: 0 2.5%;
 }
 
@@ -86,7 +88,7 @@
     }
 
     @include media-breakpoint-up (lg){
-        width: 30%;
+        width: 60%;
     }
 }
 
