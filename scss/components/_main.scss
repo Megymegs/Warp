@@ -1,4 +1,6 @@
 .spreadsheet {
+    position: relative;
+
     .add, .add:focus {
         width: 44px;
         height: 40px;
@@ -7,38 +9,93 @@
         box-shadow: none;
     }
 
-    .search {
-        border-radius: 30px;
+    .fa-filter, .fa-sort {
+        font-size: 2rem;
+    }   
+}
+
+#spreadsheet-data_wrapper {
+    position: relative;
+    display: block;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+    white-space: unset!important;
+    text-align: unset!important;
+    display: block!important;
+    text-align: right!important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border-radius: 30px;
+    width: 100%;
+    outline: none;
+    box-shadow: $box-shadows;
+    margin-left: auto;
+    padding: 0 2.5%;
+}
+
+.page-count {
+    width: 10%;
+    border-radius: 30px;
+    border: 1px solid $tertiary-color;
+    box-shadow: $box-shadows;
+}
+
+.dataTables_length, .dtr-title {
+    display: none;
+}
+
+.dataTables_info { 
+    width: 30%;
+    padding: 10px 0;
+    margin-left: auto;
+    margin-right: 10%;
+    border-radius: 30px;
+    border: 1px solid $tertiary-color;
+    box-shadow: $box-shadows;
+    text-align: center;
+
+    @include media-breakpoint-up (sm){
         width: 20%;
-        min-width: 25%;
-        outline: none;
-        box-shadow: $box-shadows;
-        
+        margin-right: 7.5%
     }
-
-    .page-count {
+    
+    @include media-breakpoint-up (lg){
         width: 10%;
-        border-radius: 30px;
-        border: 1px solid $tertiary-color;
-        box-shadow: $box-shadows;
+        margin-right: 5%;
     }
+}
 
-    .dataTables_length {
+.dataTables_paginate {
+    width: 50%;
+    right: 0;
+    bottom: 2.5%;
+    margin-right: 2.5%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    position: absolute;
+
+    span {
         display: none;
     }
 
-    .dataTables_info { 
-        width: 20%;
-        padding: 10px 0;
-        margin-left: auto;
-        border-radius: 30px;
-        border: 1px solid $tertiary-color;
-        box-shadow: $box-shadows;
-        text-align: center;
-
-        @include media-breakpoint-up (lg){
-            width: 10%;
-        }
+    @include media-breakpoint-up (sm){
+        width: 35%;
     }
-    
+
+    @include media-breakpoint-up (lg){
+        width: 15%;
+    }
+}
+
+.paginate_button {
+    padding: 0 5px;
+    color: $body-color;
+
+}
+
+.gift-card {
+    background-color: $secondary-color;
 }

@@ -2,7 +2,7 @@
 
 // Colours
 $primary-color:            #1f2020;
-$secondary-color:          #797979;
+$secondary-color:          #f0f0f075;
 $tertiary-color:           #4c4c4e;
 $contrast-color:           #7426af;
 $box-shadows:               0 0 1px $contrast-color;
@@ -19,3 +19,7 @@ $grid-breakpoints: (
   xl: 1400px
 );
 
+
+.row {
+  margin: 0!important;
+}

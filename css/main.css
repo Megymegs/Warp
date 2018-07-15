@@ -1,3 +1,6 @@
+.row {
+  margin: 0 !important; }
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -6341,37 +6344,84 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 
-.spreadsheet .add, .spreadsheet .add:focus {
-  width: 44px;
-  height: 40px;
-  border: 1px solid #4c4c4e;
-  outline: none;
-  box-shadow: none; }
+.spreadsheet {
+  position: relative; }
+  .spreadsheet .add, .spreadsheet .add:focus {
+    width: 44px;
+    height: 40px;
+    border: 1px solid #4c4c4e;
+    outline: none;
+    box-shadow: none; }
+  .spreadsheet .fa-filter, .spreadsheet .fa-sort {
+    font-size: 2rem; }
 
-.spreadsheet .search {
+#spreadsheet-data_wrapper {
+  position: relative;
+  display: block; }
+
+.dataTables_wrapper .dataTables_filter label {
+  white-space: unset !important;
+  text-align: unset !important;
+  display: block !important;
+  text-align: right !important; }
+
+.dataTables_wrapper .dataTables_filter input {
   border-radius: 30px;
-  width: 20%;
-  min-width: 25%;
+  width: 100%;
   outline: none;
-  box-shadow: 0 0 1px #7426af; }
+  box-shadow: 0 0 1px #7426af;
+  margin-left: auto;
+  padding: 0 2.5%; }
 
-.spreadsheet .page-count {
+.page-count {
   width: 10%;
   border-radius: 30px;
   border: 1px solid #4c4c4e;
   box-shadow: 0 0 1px #7426af; }
 
-.spreadsheet .dataTables_length {
+.dataTables_length, .dtr-title {
   display: none; }
 
-.spreadsheet .dataTables_info {
-  width: 20%;
+.dataTables_info {
+  width: 30%;
   padding: 10px 0;
   margin-left: auto;
+  margin-right: 10%;
   border-radius: 30px;
   border: 1px solid #4c4c4e;
   box-shadow: 0 0 1px #7426af;
   text-align: center; }
+  @media (min-width: 676px) {
+    .dataTables_info {
+      width: 20%;
+      margin-right: 7.5%; } }
   @media (min-width: 1092px) {
-    .spreadsheet .dataTables_info {
-      width: 10%; } }
+    .dataTables_info {
+      width: 10%;
+      margin-right: 5%; } }
+
+.dataTables_paginate {
+  width: 50%;
+  right: 0;
+  bottom: 2.5%;
+  margin-right: 2.5%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  position: absolute; }
+  .dataTables_paginate span {
+    display: none; }
+  @media (min-width: 676px) {
+    .dataTables_paginate {
+      width: 35%; } }
+  @media (min-width: 1092px) {
+    .dataTables_paginate {
+      width: 15%; } }
+
+.paginate_button {
+  padding: 0 5px;
+  color: #1f2020; }
+
+.gift-card {
+  background-color: #f0f0f075; }

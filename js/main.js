@@ -1,17 +1,18 @@
 // Spreadsheet
 
+FontAwesomeConfig = {
+    autoReplaceSvg: 'nest'
+};
+
+
 $(document).ready(function() {
   $("#spreadsheet-data").DataTable({
     select: true,
     language: {
         info: "_START_ to _END_ of _TOTAL_",
         search: "",
-        aria: {
-            "sortAscending":  ": activate to sort column ascending",
-            "sortDescending": ": activate to sort column descending"
-        },
+        select: true,
         paging: true,
-        pagingType: "full_numbers",
         paginate: {
             first: '<i class="fa fa-fw fa-chevron-double-left">',
             next: '<i class="fa fa-fw fa-chevron-right">',
@@ -21,3 +22,21 @@ $(document).ready(function() {
     }
   });
 });
+
+$(document).ready(function() {
+    $('#spreadsheet-data').DataTable( {
+        responsive: {
+            details: {
+                display: $.fn.dataTable.Responsive.display.modal( {
+                    header: function ( row ) {
+                        var data = row.data();
+                        return 'Details for '+data[0]+' '+data[1];
+                    }
+                } ),
+                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                    tableClass: 'table'
+                } )
+            }
+        }
+    } );
+} );
