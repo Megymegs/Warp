@@ -6346,7 +6346,8 @@ a.text-dark:hover, a.text-dark:focus {
 
 .spreadsheet {
   position: relative; }
-  .spreadsheet .add, .spreadsheet .add:focus {
+  .spreadsheet .add,
+  .spreadsheet .add:focus {
     width: 44px;
     height: 40px;
     border: 1px solid #4c4c4e;
@@ -6354,7 +6355,8 @@ a.text-dark:hover, a.text-dark:focus {
     box-shadow: none;
     margin-top: 20px;
     margin-bottom: 10px; }
-  .spreadsheet .fa-filter, .spreadsheet .fa-sort {
+  .spreadsheet .fa-filter,
+  .spreadsheet .fa-sort {
     font-size: 2rem; }
 
 #spreadsheet-data_wrapper {
@@ -6381,7 +6383,8 @@ a.text-dark:hover, a.text-dark:focus {
   border: 1px solid #4c4c4e;
   box-shadow: 0 0 1px #7426af; }
 
-.dataTables_length, .dtr-title {
+.dataTables_length,
+.dtr-title {
   display: none; }
 
 .dataTables_info {
@@ -6435,5 +6438,6 @@ a.text-dark:hover, a.text-dark:focus {
         justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-  .gift-card .step-2, .gift-card .step-3 {
+  .gift-card .step-2,
+  .gift-card .step-3 {
     display: none; }

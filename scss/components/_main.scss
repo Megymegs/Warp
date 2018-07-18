@@ -1,7 +1,7 @@
 .spreadsheet {
     position: relative;
-
-    .add, .add:focus {
+    .add,
+    .add:focus {
         width: 44px;
         height: 40px;
         border: 1px solid $tertiary-color;
@@ -10,10 +10,10 @@
         margin-top: 20px;
         margin-bottom: 10px;
     }
-
-    .fa-filter, .fa-sort {
+    .fa-filter,
+    .fa-sort {
         font-size: 2rem;
-    }   
+    }
 }
 
 #spreadsheet-data_wrapper {
@@ -22,10 +22,10 @@
 }
 
 .dataTables_wrapper .dataTables_filter label {
-    white-space: unset!important;
-    text-align: unset!important;
-    display: block!important;
-    text-align: right!important;
+    white-space: unset !important;
+    text-align: unset !important;
+    display: block !important;
+    text-align: right !important;
 }
 
 .dataTables_wrapper .dataTables_filter input {
@@ -44,11 +44,12 @@
     box-shadow: $box-shadows;
 }
 
-.dataTables_length, .dtr-title {
+.dataTables_length,
+.dtr-title {
     display: none;
 }
 
-.dataTables_info { 
+.dataTables_info {
     width: 40%;
     display: inline-block;
     padding: 10px 0;
@@ -57,13 +58,11 @@
     border: 1px solid $tertiary-color;
     box-shadow: $box-shadows;
     text-align: center;
-
-    @include media-breakpoint-up (sm){
+    @include media-breakpoint-up (sm) {
         width: 40%;
         margin-right: 7.5%
     }
-    
-    @include media-breakpoint-up (lg){
+    @include media-breakpoint-up (lg) {
         width: 25%;
         margin-right: 5%;
     }
@@ -78,16 +77,13 @@
     display: flex;
     display: -webkit-flex;
     justify-content: space-between;
-
     span {
         display: none;
     }
-
-    @include media-breakpoint-up (sm){
+    @include media-breakpoint-up (sm) {
         width: 60%;
     }
-
-    @include media-breakpoint-up (lg){
+    @include media-breakpoint-up (lg) {
         width: 60%;
     }
 }
@@ -95,21 +91,18 @@
 .paginate_button {
     padding: 0 5px;
     color: $body-color;
-
 }
 
 .gift-card {
     background-color: $secondary-color;
     display: none;
-
     .step-1 {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
     }
-
-    .step-2, .step-3 {
+    .step-2,
+    .step-3 {
         display: none;
     }
-    
 }

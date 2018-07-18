@@ -1,25 +1,21 @@
 // All custom and bootstrap override variables in this file
-
 // Colours
-$primary-color:            #1f2020;
-$secondary-color:          #f0f0f075;
-$tertiary-color:           #4c4c4e;
-$contrast-color:           #7426af;
-$box-shadows:               0 0 1px $contrast-color;
+$primary-color : #1f2020;
+$secondary-color : #f0f0f075;
+$tertiary-color : #4c4c4e;
+$contrast-color : #7426af;
+$box-shadows : 0 0 1px $contrast-color;
 
-// boot
-$body-color:                $primary-color;
+// overwriting bootstrap class
+$body-color : $primary-color;
 
-// Grid
-$grid-breakpoints: (
-  xs: 0,
-  sm: 676px,
-  md: 868px,
-  lg: 1092px,
-  xl: 1400px
-);
-
-
+// Overwriting bootstrap Grid breakpoints
+$grid-breakpoints: ( 
+  xs: 0, 
+  sm: 676px, 
+  md: 868px, 
+  lg: 1092px, 
+  xl: 1400px);
 .row {
-  margin: 0!important;
+  margin: 0 !important;
 }
