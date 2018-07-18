@@ -6,7 +6,6 @@ FontAwesomeConfig = {
 
 $(document).ready(function() {
   $("#spreadsheet-data").DataTable({
-    select: true,
     responsive: true,
     language: {
       info: "_START_ to _END_ of _TOTAL_",
@@ -15,14 +14,11 @@ $(document).ready(function() {
     },
     data: dataSet,
       columns: [
-          { title: ' <input type="checkbox" id="select-all"> ' },
-          { title: "Date Created" },
-          { title: "CVC No" },
-          { title: "Amount" },
-          { title: "Customer" },
-          { title: "Quantity" },
-          { title: "Status" },
-          { title: ' <i class="fas fa-caret-down"></i> ' }
+          { title: "Job Title" },
+          { title: "Location" },
+          { title: "Attendees" },
+          { title: "Date of Survey" },
+          { title: "Par Revenue" }
       ]
   });
 });
@@ -63,58 +59,28 @@ function createCard() {
   $(".gift-card").css("display", "block");
 }
 
-$('.gift-card').on('hidden',function(e){
-  $(this).remove();
+var myBackup = $('.gift-card').clone();
+
+$('body').on('click','.done',function() {
+  $('.modal-backdrop.in').modal('hide').remove();
+  $('.gift-card').modal('hide').remove();
+      var myClone = myBackup.clone();
+      $('body').append(myClone);
 });
 
 // adding row to spreadsheet
 $(document).ready(function() {
   var t = $("#spreadsheet-data").DataTable();
-  var status = ' Active ';
-  var quantity = '';
-  var customer = '';
-  var counter = '';
-  var select = '';
-  
-  var amount = '';
-
-
-// adding date to new row
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth()+1; //January is 0!
-  var yyyy = today.getFullYear();
-
-  if(dd<10) {
-      dd = '0'+dd
-  } 
-  if(mm<10) {
-      mm = '0'+mm
-  } 
-  // returns date in year-month-day format
-  today = yyyy + '.' + mm + '.' + dd;
-
-  var cvc = getRandomArbitrary()
-
-  function getRandomArbitrary(min, max) {
-    return Math.floor(Math.random() * ((10000-1)+1) + 1);  
-  }
-
   $(".done").on("click", function() {
     t.row
       .add([
-        select + "",
-        today + "",
-        "#"+cvc ,
-        amount + "",
-        customer + ".4",
-        quantity + ".5",
-        status + "",
-        counter + '<i class="fas fa-caret-down"></i>'
+        { title: "Job Title" },
+        { title: "Location" },
+        { title: "Attendees" },
+        { title: "Date of Survey" },
+        { title: "Par Revenue" }
       ])
       .draw(false);
-
-    counter++;
   });
 
   // Automatically add a first row of data
