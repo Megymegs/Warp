@@ -69,7 +69,6 @@ $('.gift-card').on('hidden',function(e){
 
 // adding row to spreadsheet
 $(document).ready(function() {
-  var data = table.$('input, select').serialize();
   var t = $("#spreadsheet-data").DataTable();
   var status = ' Active ';
   var quantity = '';
@@ -78,7 +77,6 @@ $(document).ready(function() {
   var select = '';
   
   var amount = '';
-  document.querySelector("#amount").value;
 
 
 // adding date to new row
