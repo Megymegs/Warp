@@ -6388,9 +6388,8 @@ a.text-dark:hover, a.text-dark:focus {
   display: none; }
 
 .dataTables_info {
-  width: 40%;
   display: inline-block;
-  padding: 10px 0;
+  padding: 1% 2%;
   margin-right: 10%;
   border-radius: 30px;
   border: 1px solid #4c4c4e;
@@ -6398,15 +6397,13 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: center; }
   @media (min-width: 676px) {
     .dataTables_info {
-      width: 40%;
-      margin-right: 7.5%; } }
+      margin-right: 7.5%;
+      width: auto; } }
   @media (min-width: 1092px) {
     .dataTables_info {
-      width: 25%;
       margin-right: 5%; } }
 
 .dataTables_paginate {
-  width: 40%;
   display: inline-block;
   right: 0;
   bottom: 2.5%;
@@ -6417,16 +6414,13 @@ a.text-dark:hover, a.text-dark:focus {
       justify-content: space-between; }
   .dataTables_paginate span {
     display: none; }
-  @media (min-width: 676px) {
-    .dataTables_paginate {
-      width: 60%; } }
-  @media (min-width: 1092px) {
-    .dataTables_paginate {
-      width: 60%; } }
 
 .paginate_button {
   padding: 0 5px;
   color: #1f2020; }
+
+.selected {
+  background-color: rgba(0, 0, 0, 0.075); }
 
 .gift-card {
   background-color: #f0f0f075;

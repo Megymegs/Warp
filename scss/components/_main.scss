@@ -50,26 +50,23 @@
 }
 
 .dataTables_info {
-    width: 40%;
     display: inline-block;
-    padding: 10px 0;
+    padding: 1% 2%;
     margin-right: 10%;
     border-radius: 30px;
     border: 1px solid $tertiary-color;
     box-shadow: $box-shadows;
     text-align: center;
     @include media-breakpoint-up (sm) {
-        width: 40%;
-        margin-right: 7.5%
+        margin-right: 7.5%;
+        width: auto;
     }
     @include media-breakpoint-up (lg) {
-        width: 25%;
         margin-right: 5%;
     }
 }
 
 .dataTables_paginate {
-    width: 40%;
     display: inline-block;
     right: 0;
     bottom: 2.5%;
@@ -80,17 +77,15 @@
     span {
         display: none;
     }
-    @include media-breakpoint-up (sm) {
-        width: 60%;
-    }
-    @include media-breakpoint-up (lg) {
-        width: 60%;
-    }
 }
 
 .paginate_button {
     padding: 0 5px;
     color: $body-color;
+}
+
+.selected {
+    background-color: rgba(0, 0, 0, 0.075);
 }
 
 .gift-card {

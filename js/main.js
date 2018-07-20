@@ -14,11 +14,13 @@ $(document).ready(function() {
     },
     data: dataSet,
       columns: [
+          { title: '<input type="checkbox" id="select-me">' },
           { title: "Job Title" },
           { title: "Location" },
           { title: "Attendees" },
           { title: "Date of Survey" },
-          { title: "Par Revenue" }
+          { title: "Par Revenue" },
+          { title: '<i class="fas fa-trash"></i>' }
       ]
   });
 });
@@ -68,21 +70,48 @@ $('body').on('click','.done',function() {
       $('body').append(myClone);
 });
 
+function jobTitle() {
+    var x = document.getElementsByClassName("design-holder").value;
+    document.getElementsByClassName("sorting_1").innerHTML = x;
+}
+
 // adding row to spreadsheet
 $(document).ready(function() {
   var t = $("#spreadsheet-data").DataTable();
   $(".done").on("click", function() {
     t.row
       .add([
-        { title: "Job Title" },
-        { title: "Location" },
-        { title: "Attendees" },
-        { title: "Date of Survey" },
-        { title: "Par Revenue" }
-      ])
+        '<input type="checkbox" id="select-me">',
+        "0",
+        "0" ,
+        "0" ,
+        "0",
+        "0",
+        '<i class="fas fa-trash delete"></i>' 
+    ])
       .draw(false);
   });
 
   // Automatically add a first row of data
   $("#addRow").click();
 });
+
+$(document).ready(function() {
+  var table = $('#spreadsheet-data').DataTable();
+
+  $('#spreadsheet-data tbody').on( 'click', 'tr', function () {
+      if ( $(this).hasClass('selected') ) {
+          $(this).removeClass('selected');
+          $('#select-me').removeClass('selected');
+      }
+      else {
+          table.$('tr.selected').removeClass('selected');
+          $(this).addClass('selected');
+          $("#select-me").addClass('selected');
+      }
+  } );
+
+  $('.delete').click( function () {
+      table.row('.selected').remove().draw( false );
+  } );
+} );
