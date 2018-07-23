@@ -16,9 +16,14 @@
     }
 }
 
+table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
+    text-align: center!important;
+}
+
 #spreadsheet-data_wrapper {
     position: relative;
     display: block;
+    margin-bottom: 3rem;
 }
 
 .dataTables_wrapper .dataTables_filter label {
@@ -44,9 +49,12 @@
     box-shadow: $box-shadows;
 }
 
-.dataTables_length,
-.dtr-title {
-    display: none;
+.dataTables_wrapper .dataTables_length label{
+    white-space: unset !important;
+    text-align: unset !important;
+    display: block !important;
+    text-align: left !important;
+    margin: 3.5% 0 1% auto;
 }
 
 .dataTables_info {
@@ -95,9 +103,23 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        .modal-body-1 {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
     }
     .step-2,
     .step-3 {
         display: none;
     }
+}
+
+// custom icons for sorting  
+table.dataTable thead .sorting_asc:after{
+    content: "\e133"!important;
+}    
+
+table.dataTable thead .sorting_desc:after{
+    content: "\e134"!important;
 }

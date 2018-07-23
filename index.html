@@ -2,67 +2,85 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title></title>
+    <title>Career Census - Megan Meyer</title>
 
     <!-- Favicons -->
 
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-
-
-
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
 </head>
 
 <body>
-
-    <div class="container-fluid pt-5">
+    <div class="container-fluid pt-2">
         <section class="spreadsheet section">
             <div class="d-flex">
-                <h1 class="w-100 mr-auto">Gift
-                </h1>
+                <h1 class="w-100 mr-auto">Career Field Census </h1>
                 <button class="btn rounded-circle bg-transparent add">
                     <i class="fa fa-plus" aria-hidden="true"></i>
                 </button>
             </div>
 
-            <div class="d-flex pb-3 pt-3 border border-left-0 border-right-0">
-                <h2 class="pr-md-5">Filter
-                    <div class="dropdown d-inline">
-                        <div class="border-none d-inline bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-filter btn pr-3 pl-3" aria-hidden="true"></i>
+            <div>
+                <h2>Sort By
+                    <div class="asc d-inline" data-toggle="tooltip" title="Sort data ascending">
+                        <div class="dropdown d-inline">
+                            <div class="border-none d-inline bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" type="button" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="fa fa-sort-amount-up btn pr-3 pl-3" aria-hidden="true"></i>
+                            </div>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" id="job-up" href="#">Job
+                                    <i class="fas fa-sort-alpha-up"></i>
+                                </a>
+                                <a class="dropdown-item" id="location-up" href="#">Location
+                                    <i class="fas fa-sort-alpha-up"></i>
+                                </a>
+                                <a class="dropdown-item" id="attendees-up">Attendees
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                </a>
+                                <a class="dropdown-item" id="date-up" href="#">Date
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                </a>
+                                <a class="dropdown-item" id="pay-up" href="#">Revenue
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </h2>
-
-                <h2 class="pl-2 pl-md-5">Sort By
-                    <div class="dropdown d-inline">
-                        <div class="border-none d-inline bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-sort btn pr-3 pl-3" aria-hidden="true"></i>
-                        </div>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="desc d-inline position-relative" data-toggle="tooltip" title="Sort data descending">
+                            <div class="border-none d-inline bg-transparent" id="dropdownMenuButton2" data-toggle="dropdown" type="button" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="fa fa-sort-amount-down btn pr-3 pl-3" aria-hidden="true"></i>
+                            </div>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <a class="dropdown-item" id="job-down" href="#">Job
+                                    <i class="fas fa-sort-alpha-down"></i>
+                                </a>
+                                <a class="dropdown-item" id="location-down" href="#">Location
+                                    <i class="fas fa-sort-alpha-down"></i>
+                                </a>
+                                <a class="dropdown-item" id="attendees-down">Attendees
+                                    <i class="fas fa-sort-numeric-down"></i>
+                                </a>
+                                <a class="dropdown-item" id="date-down" href="#">Date
+                                    <i class="fas fa-sort-numeric-down"></i>
+                                </a>
+                                <a class="dropdown-item" id="pay-down" href="#">Revenue
+                                    <i class="fas fa-sort-numeric-down"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </h2>
             </div>
-
         </section>
     </div>
+
     <table id="spreadsheet-data" class="table table-bordered dt-responsive nowrap w-100 mb-5 table-hover">
-        
     </table>
 
     <div class="modal fade gift-card m-auto rounded" tabindex="-1" role="dialog">
@@ -75,32 +93,10 @@
                     <h4 class="modal-title">Bulk Create Gift Cards - Step 1</h4>
                     <h5>Please select a design below....</h5>
                 </div>
-                <div class="modal-body p-5">
-                    <button type="radio" class="border rounded mb-5 design-holder" id="Appreciation">
-                        <img src="images/Appreciation.png" alt="Appreciation" width="100px" height="100px">
-                    </button>
-                    <button type="radio" class="border rounded mb-5 design-holder" id="Birthday">
-                        <img src="images/birthday.png" alt="Birthday" width="100px" height="100px">
-                    </button>
-                    <button type="radio" class="border rounded mb-5 design-holder" id="Birthday2">
-                        <img src="images/birthday2.png" alt="Birthday" width="100px" height="100px">
-                    </button>
-                    <button type="radio" class="border rounded mb-5 design-holder" id="">
-                        <img src="images/farewell.png" alt="Farewell" width="100px" height="100px">
-                    </button>
-                    <button type="radio" class="border rounded mb-5 design-holder" id="">
-                        <img src="images/Fathers-day.png" alt="Fathers day" width="100px" height="100px">
-                    </button>
-                    <button type="radio" class="border rounded mb-5 design-holder" id="">
-                        <img src="images/get-well.png" alt="Get Well" width="100px" height="100px">
-                    </button>
-                    <button type="radio" class="border rounded mb-5 design-holder" id="">
-                        <img src="images/thank-you.png" alt="Thank you" width="100px" height="100px">
-                    </button>
-                    <button type="radio" class="border rounded mb-5 design-holder" id="">
-                        <img src="images/welcome.png" alt="Welcome" width="100px" height="100px">
-                    </button>
-                </div>
+                <form class="modal-body modal-body-1 d-flex p-5" action="get-method.php" method="get">
+                    <input id="jobTitle" value="" type="text" name="Job" placeholder="Job Title">
+                    <input id="location" value="" type="text" name="Location" placeholder="Location">
+                </form>
                 <div class="modal-footer">
                     <button type="button" class="next next-modal" aria-label="next">Next</button>
                 </div>
@@ -109,9 +105,10 @@
                 <div class="modal-header d-block">
                     <button type="button" class="previous back-modal" aria-label="previous">Back</button>
                 </div>
-                <div class="modal-body p-5">
-                    <input class="amount" type="number" placeholder="Value">
-                    <input class="quantity" type="number" placeholder="Quantity">
+                <div class="modal-body p-5" action="get-method.php" method="get">
+                    <input value="" id="attendees" type="number" name="Attendees" placeholder="Amount of attendees" class="mb-5 mr-5">
+                    <input value="" id="dateOf" type="number" name="Date" placeholder="Date of censense" class="mb-5 mr-5">
+                    <input value="" id="income" type="number" name="Salary" placeholder="Average monthly income" class="mb-5 mr-5">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">Cancel
@@ -123,24 +120,22 @@
                 <div class="modal-header d-block">
                     <button type="button" class="previous back-modal-1" aria-label="previous">Back</button>
                 </div>
-                <div class="modal-body p-5">
-
+                <div class="modal-body p-5" id="preview-row-data">
+                    <?php include 'php/get-method.php';?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-primary btn done" data-destory="modal" aria-label="Close">Done
-                    </button>
+                    <input type="button" class="close btn done next" data-destory="modal" aria-label="Close" value="Done">
                 </div>
             </div>
         </div>
     </div>
 
-
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/objects.js"></script>
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
-        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
