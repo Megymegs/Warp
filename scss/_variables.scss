@@ -1,14 +1,13 @@
 // All custom and bootstrap override variables in this file
 // Colours
-$base: #333;
-$primary-color : #1f2020;
+$primary-color: #000000;
 $secondary-color : #f0f0f075;
-$tertiary-color : #4c4c4e;
 $contrast-color : #7426af;
+$border : pink;
 $box-shadows : 0 0 1px $contrast-color;
 
 // overwriting bootstrap class
-$body-color : $primary-color;
+$base : $white;
 
 // Overwriting bootstrap Grid breakpoints
 $grid-breakpoints: ( 
@@ -21,6 +20,7 @@ $grid-breakpoints: (
   margin: 0 !important;
 }
 
+// Overwriting default table styling for links
 td a, td a:focus, td a:hover,
 th a, th a:focus, th a:hover {
   color: $base;

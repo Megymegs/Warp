@@ -14,7 +14,7 @@ $(document).ready(function() {
     },
     data: dataSet,
       columns: [
-          { title: "<input type='checkbox' name='record'>" },
+          { title: "" },
           { title: 'Job Title' },
           { title: 'Location' },
           { title: 'Attendees' },
@@ -91,7 +91,7 @@ $(document).ready(function() {
   var addAttendees = $("#attendees").val();
   var addDate = $("#dateOf").val();
   var addPay = $("#income").val();
-  var addDelete = '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>';
+  var addDelete = '<a href="#" tabIndex="5" data-toggle="tooltip" title="Clear table" data-placement="left"><i class="fas fa-trash delete"></i></a>';
   var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + addJob + "</td><td>" + addLocation + "</td></tr>" + addAttendees + "</td><td>" + addDate + "</td></tr>" + addPay + "</td></tr>";
   $("table tbody").append(markup);
 
@@ -156,44 +156,53 @@ $(document).ready(function() {
 // order columns ascending
 $('#job-up').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([0, 'asc']).draw();
+  table.order([1, 'asc']).draw();
 });
 $('#location-up').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([1, 'asc']).draw();
+  table.order([2, 'asc']).draw();
 });
 $('#attendees-up').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([2, 'asc']).draw();
+  table.order([3, 'asc']).draw();
 });
 $('#date-up').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([3, 'asc']).draw();
+  table.order([4, 'asc']).draw();
 });
 $('#pay-up').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([4, 'asc']).draw();
+  table.order([5, 'asc']).draw();
 });
 
 // order columns descending
 $('#job-down').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([0, 'desc']).draw();
+  table.order([1, 'desc']).draw();
 });
 $('#location-down').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([1, 'desc']).draw();
+  table.order([2, 'desc']).draw();
 });
 $('#attendees-down').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([2, 'desc']).draw();
+  table.order([3, 'desc']).draw();
 });
 $('#date-down').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([3, 'desc']).draw();
+  table.order([4, 'desc']).draw();
 });
 $('#pay-down').click(function() {
   var table = $('#spreadsheet-data').DataTable();
-  table.order([4, 'desc']).draw();
+  table.order([5, 'desc']).draw();
 });
 
+$(document).ready(function(){
+  $('.dataTables_filter input').attr('placeholder', 'Search');
+  $('.form-control').css({
+    'background-color': '#000000bf',
+    'color':'white',
+    'border':'1px solid $border',
+  });
+  $('.col-sm-5, .col-sm-7').css('margin-top','1em');
+});

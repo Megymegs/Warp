@@ -15,116 +15,118 @@
     <link rel="stylesheet" href="css/jquery.datetimepicker.css">
 </head>
 
-<body>
-    <div class="container-fluid pt-2">
-        <section class="spreadsheet section">
-            <div class="d-flex">
-                <h1 class="w-100 mr-auto">Career Field Census </h1>
-                <button class="btn rounded-circle bg-transparent add">
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
-            </div>
-
-            <div>
-                <h2>Sort By
-                    <div class="asc d-inline" data-toggle="tooltip" title="Sort data ascending">
-                        <div class="dropdown d-inline">
-                            <div class="border-none d-inline bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" type="button" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fa fa-sort-amount-up btn pr-3 pl-3" aria-hidden="true"></i>
+<body class="container-fluid d-flex pt-5 pb-5">
+    <div class="holder w-100 rounded">
+        <div class="container-fluid pt-2">
+            <section class="spreadsheet">
+                <div class="d-flex">
+                    <h1 class="w-100 mr-auto">Career Field Census </h1>
+                    <button class="btn btn-new rounded-circle add">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+    
+                <div>
+                    <h2>Sort By
+                        <div class="asc d-inline" data-toggle="tooltip" title="Sort data ascending">
+                            <div class="dropdown d-inline">
+                                <div class="border-none d-inline bg-transparent" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fa fa-sort-amount-up btn btn-new pr-3 pl-3" aria-hidden="true"></i>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" id="job-up" href="#">Job
+                                        <i class="fas fa-sort-alpha-up"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="location-up" href="#">Location
+                                        <i class="fas fa-sort-alpha-up"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="attendees-up">Attendees
+                                        <i class="fas fa-sort-numeric-up"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="date-up" href="#">Date
+                                        <i class="fas fa-sort-numeric-up"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="pay-up" href="#">Revenue
+                                        <i class="fas fa-sort-numeric-up"></i>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" id="job-up" href="#">Job
-                                    <i class="fas fa-sort-alpha-up"></i>
-                                </a>
-                                <a class="dropdown-item" id="location-up" href="#">Location
-                                    <i class="fas fa-sort-alpha-up"></i>
-                                </a>
-                                <a class="dropdown-item" id="attendees-up">Attendees
-                                    <i class="fas fa-sort-numeric-up"></i>
-                                </a>
-                                <a class="dropdown-item" id="date-up" href="#">Date
-                                    <i class="fas fa-sort-numeric-up"></i>
-                                </a>
-                                <a class="dropdown-item" id="pay-up" href="#">Revenue
-                                    <i class="fas fa-sort-numeric-up"></i>
-                                </a>
+                            <div class="desc d-inline position-relative" data-toggle="tooltip" title="Sort data descending">
+                                <div class="border-none d-inline bg-transparent" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fa fa-sort-amount-down btn btn-new pr-3 pl-3" aria-hidden="true"></i>
+                                </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <a class="dropdown-item" id="job-down" href="#">Job
+                                        <i class="fas fa-sort-alpha-down"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="location-down" href="#">Location
+                                        <i class="fas fa-sort-alpha-down"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="attendees-down">Attendees
+                                        <i class="fas fa-sort-numeric-down"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="date-down" href="#">Date
+                                        <i class="fas fa-sort-numeric-down"></i>
+                                    </a>
+                                    <a class="dropdown-item" id="pay-down" href="#">Revenue
+                                        <i class="fas fa-sort-numeric-down"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="desc d-inline position-relative" data-toggle="tooltip" title="Sort data descending">
-                            <div class="border-none d-inline bg-transparent" id="dropdownMenuButton2" data-toggle="dropdown" type="button" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fa fa-sort-amount-down btn pr-3 pl-3" aria-hidden="true"></i>
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <a class="dropdown-item" id="job-down" href="#">Job
-                                    <i class="fas fa-sort-alpha-down"></i>
-                                </a>
-                                <a class="dropdown-item" id="location-down" href="#">Location
-                                    <i class="fas fa-sort-alpha-down"></i>
-                                </a>
-                                <a class="dropdown-item" id="attendees-down">Attendees
-                                    <i class="fas fa-sort-numeric-down"></i>
-                                </a>
-                                <a class="dropdown-item" id="date-down" href="#">Date
-                                    <i class="fas fa-sort-numeric-down"></i>
-                                </a>
-                                <a class="dropdown-item" id="pay-down" href="#">Revenue
-                                    <i class="fas fa-sort-numeric-down"></i>
-                                </a>
-                            </div>
-                        </div>
+                    </h2>
+                </div>
+            </section>
+        </div>
+    
+        <table id="spreadsheet-data" class="table table-bordered dt-responsive nowrap w-100 table-hover rounded">
+        </table>
+    
+        <div class="modal fade gift-card m-auto rounded" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content step-1">
+                    <div class="modal-header d-block">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">Bulk Create Gift Cards - Step 1</h4>
+                        <h5>Please select a design below....</h5>
                     </div>
-                </h2>
-            </div>
-        </section>
-    </div>
-
-    <table id="spreadsheet-data" class="table table-bordered dt-responsive nowrap w-100 mb-5 table-hover">
-    </table>
-
-    <div class="modal fade gift-card m-auto rounded" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content step-1">
-                <div class="modal-header d-block">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">Bulk Create Gift Cards - Step 1</h4>
-                    <h5>Please select a design below....</h5>
+                    <form class="modal-body modal-body-1 d-flex p-5" action="get-method.php" method="get">
+                        <input id="jobTitle" value="" type="text" name="Job" placeholder="Job Title">
+                        <input id="location" value="" type="text" name="Location" placeholder="Location">
+                    </form>
+                    <div class="modal-footer">
+                        <button type="button" class="next next-modal" aria-label="next">Next</button>
+                    </div>
                 </div>
-                <form class="modal-body modal-body-1 d-flex p-5" action="get-method.php" method="get">
-                    <input id="jobTitle" value="" type="text" name="Job" placeholder="Job Title">
-                    <input id="location" value="" type="text" name="Location" placeholder="Location">
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="next next-modal" aria-label="next">Next</button>
+                <div class="modal-content step-2">
+                    <div class="modal-header d-block">
+                        <button type="button" class="previous back-modal" aria-label="previous">Back</button>
+                    </div>
+                    <div class="modal-body p-5" action="get-method.php" method="get">
+                        <input value="" id="attendees" type="number" name="Attendees" placeholder="Amount of attendees" class="mb-5 mr-5">
+                        <input value="" id="dateOf" type="number" name="Date" placeholder="Date of censense" class="mb-5 mr-5">
+                        <input value="" id="income" type="number" name="Salary" placeholder="Average monthly income" class="mb-5 mr-5">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">Cancel
+                        </button>
+                        <button type="button" class="next next-modal-1" aria-label="next">Create</button>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-content step-2">
-                <div class="modal-header d-block">
-                    <button type="button" class="previous back-modal" aria-label="previous">Back</button>
-                </div>
-                <div class="modal-body p-5" action="get-method.php" method="get">
-                    <input value="" id="attendees" type="number" name="Attendees" placeholder="Amount of attendees" class="mb-5 mr-5">
-                    <input value="" id="dateOf" type="number" name="Date" placeholder="Date of censense" class="mb-5 mr-5">
-                    <input value="" id="income" type="number" name="Salary" placeholder="Average monthly income" class="mb-5 mr-5">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">Cancel
-                    </button>
-                    <button type="button" class="next next-modal-1" aria-label="next">Create</button>
-                </div>
-            </div>
-            <div class="modal-content step-3">
-                <div class="modal-header d-block">
-                    <button type="button" class="previous back-modal-1" aria-label="previous">Back</button>
-                </div>
-                <div class="modal-body p-5" id="preview-row-data">
-                    <?php include 'php/get-method.php';?>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="close btn done next" data-destory="modal" aria-label="Close" value="Done">
+                <div class="modal-content step-3">
+                    <div class="modal-header d-block">
+                        <button type="button" class="previous back-modal-1" aria-label="previous">Back</button>
+                    </div>
+                    <div class="modal-body p-5" id="preview-row-data">
+                        <?php include 'php/get-method.php';?>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="close btn done next" data-destory="modal" aria-label="Close" value="Done">
+                    </div>
                 </div>
             </div>
         </div>

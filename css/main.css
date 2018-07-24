@@ -4,8 +4,8 @@
 
 td a, td a:focus, td a:hover,
 th a, th a:focus, th a:hover {
-  color: #333;
-  outline: #333; }
+  color: #fff;
+  outline: #fff; }
 
 :root {
   --blue: #007bff;
@@ -62,7 +62,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #1f2020;
+  color: #212529;
   text-align: left;
   background-color: #fff; }
 
@@ -2277,7 +2277,7 @@ tbody.collapse.show {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #1f2020;
+  color: #212529;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -6350,13 +6350,19 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 
+body {
+  background-image: linear-gradient(to bottom right, #AA076B, #61045F, #AA076B);
+  color: #000000 !important; }
+  body .holder {
+    background-color: #f0f0f075;
+    border: 1px solid pink; }
+
 .spreadsheet {
   position: relative; }
   .spreadsheet .add,
   .spreadsheet .add:focus {
     width: 44px;
     height: 40px;
-    border: 1px solid #4c4c4e;
     outline: none;
     box-shadow: none;
     margin-top: 20px;
@@ -6364,14 +6370,23 @@ a.text-dark:hover, a.text-dark:focus {
   .spreadsheet .fa-filter,
   .spreadsheet .fa-sort {
     font-size: 2rem; }
+  .spreadsheet .fa-sort-amount-up,
+  .spreadsheet .fa-sort-amount-down,
+  .spreadsheet .fa-plus {
+    color: #fff; }
+  .spreadsheet .btn-new {
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid pink; }
 
 table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
   text-align: center !important; }
 
 #spreadsheet-data_wrapper {
   position: relative;
-  display: block;
-  margin-bottom: 3rem; }
+  display: block; }
+  #spreadsheet-data_wrapper #spreadsheet-data {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white; }
 
 .dataTables_wrapper .dataTables_filter label {
   white-space: unset !important;
@@ -6380,17 +6395,18 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
   text-align: right !important; }
 
 .dataTables_wrapper .dataTables_filter input {
-  border-radius: 30px;
+  border-radius: 0.5em;
   width: 100%;
   outline: none;
   box-shadow: 0 0 1px #7426af;
   margin: 2.5% 0 2% auto;
-  padding: 0 2.5%; }
+  padding: 0 2.5%;
+  border-color: pink; }
 
 .page-count {
   width: 10%;
-  border-radius: 30px;
-  border: 1px solid #4c4c4e;
+  border-radius: 0.5em;
+  border: 1px solid pink;
   box-shadow: 0 0 1px #7426af; }
 
 .dataTables_wrapper .dataTables_length label {
@@ -6399,15 +6415,23 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
   display: block !important;
   text-align: left !important;
   margin: 3.5% 0 1% auto; }
+  .dataTables_wrapper .dataTables_length label select.form-control:not([size]):not([multiple]) {
+    height: unset;
+    border-radius: 0.5em;
+    border-color: pink; }
 
 .dataTables_info {
   display: inline-block;
-  padding: 1% 2%;
-  margin-right: 10%;
-  border-radius: 30px;
-  border: 1px solid #4c4c4e;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 0.5em;
+  border: 1px solid pink;
   box-shadow: 0 0 1px #7426af;
-  text-align: center; }
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff; }
   @media (min-width: 676px) {
     .dataTables_info {
       margin-right: 7.5%;
@@ -6430,10 +6454,15 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
 
 .paginate_button {
   padding: 0 5px;
-  color: #1f2020; }
+  color: #212529; }
 
 .selected {
-  background-color: rgba(0, 0, 0, 0.075); }
+  background-color: rgba(0, 0, 0, 0.75); }
+
+.table-hover tbody tr:hover {
+  color: black; }
+  .table-hover tbody tr:hover .delete {
+    color: black; }
 
 .gift-card {
   background-color: #f0f0f075;
@@ -6454,8 +6483,30 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
   .gift-card .step-3 {
     display: none; }
 
+table.dataTable thead .sorting:after {
+  opacity: 1 !important; }
+
 table.dataTable thead .sorting_asc:after {
-  content: "" !important; }
+  content: "" !important;
+  opacity: 1 !important; }
 
 table.dataTable thead .sorting_desc:after {
-  content: "" !important; }
+  content: "" !important;
+  opacity: 1 !important; }
+
+.pagination > li > a, .pagination > li > a:focus {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  border-color: pink !important;
+  color: white !important;
+  outline: 0; }
+
+.pagination > li > a:hover {
+  background-color: #fff !important;
+  color: #000 !important; }
+
+.pagination > .active > a, .pagination > .active > a:focus {
+  background-color: #000000 !important; }
+
+.pagination > .disabled > a, .pagination > .disabled > a:hover {
+  color: #f0f0f075 !important;
+  background-color: rgba(0, 0, 0, 0.75) !important; }
