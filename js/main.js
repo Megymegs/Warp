@@ -10,7 +10,10 @@ $(document).ready(function() {
     language: {
       info: "_START_ to _END_ of _TOTAL_",
       search: "",
-      select: true
+      select: {
+        style:    'os',
+        selector: 'td:first-child'
+      },
     },
     data: dataSet,
       columns: [
@@ -23,8 +26,9 @@ $(document).ready(function() {
           { title: '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash clear-all"></i></a>'}
       ],
       columnDefs: [ {
-        targets: [0,6],
-        orderable: false
+        targets: 0,
+        orderable: false,
+        className: 'select-checkbox',
         } ]
   });
 });
@@ -38,7 +42,7 @@ $(document).ready(function() {
   // Trigger Modal Containing the Table
   $(document).on("click", ".add", function() {
     // Show Modal 1 first step
-    $(".gift-card").modal("show");
+    $(".add-census").modal("show");
   });
   $(document).on("click", ".next-modal", function() {
     // Show Modal 2 second step
@@ -65,18 +69,18 @@ $(document).ready(function() {
 })();
 
 $(document).ready(function(){
-  $('[data-toggle="popover"]').popover(); 
+  $('[data-toggle="hover"]').popover(); 
 });
 // display modal
 function createCard() {
-  $(".gift-card").css("display", "block");
+  $(".add-census").css("display", "block");
 }
 
-var myBackup = $('.gift-card').clone();
+var myBackup = $('.add-census').clone();
 // reseting modal once steps have been completed
 $('body').on('click','.done',function() {
   $('.modal-backdrop.in').modal('hide').remove();
-  $('.gift-card').modal('hide').remove();
+  $('.add-census').modal('hide').remove();
       var myClone = myBackup.clone();
       $('body').append(myClone);
 });
@@ -85,18 +89,18 @@ $('body').on('click','.done',function() {
 $(document).ready(function() {
   var t = $("#spreadsheet-data").DataTable();
   
-  var addSelect = "<input type='checkbox' name='record'>";
+  var addSelect = "<input type='checkbox' name='record' class='checked-row'>";
   var addJob = $('tr').find('#jobTitle').text();
   var addLocation = $("#location").val();
   var addAttendees = $("#attendees").val();
   var addDate = $("#dateOf").val();
   var addPay = $("#income").val();
   var addDelete = '<a href="#" tabIndex="5" data-toggle="tooltip" title="Clear table" data-placement="left"><i class="fas fa-trash delete"></i></a>';
-  var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + addJob + "</td><td>" + addLocation + "</td></tr>" + addAttendees + "</td><td>" + addDate + "</td></tr>" + addPay + "</td></tr>";
+  var markup = "<tr><td><input type='checkbox' name='record' class='checked-row'></td><td>" + addJob + "</td><td>" + addLocation + "</td></tr>" + addAttendees + "</td><td>" + addDate + "</td></tr>" + addPay + "</td></tr>";
   $("table tbody").append(markup);
 
   // last modal preview new row
-  document.getElementById("preview-row-data").innerHTML = "<ul><li>" + addJob + "</li><li>" + addLocation + "</li><li>" + addAttendees + "</li><li>" + addDate + "</li><li>" + addPay + "</li></ul>";
+  document.getElementById("preview-row-data").innerHTML = "<ul><li>Job Title:" + addJob + "</li><li>Location:" + addLocation + "</li><li>Amount of Attendees:" + addAttendees + "</li><li>Census Date:" + addDate + "</li><li>par Salary:" + addPay + "</li></ul>";
 
   // adding data to new row
   $(".done").on("click", function() {
@@ -128,21 +132,24 @@ $(document).ready(function() {
   var table = $('#spreadsheet-data').DataTable();
 // select row
   $('#spreadsheet-data tbody').on( 'click', 'tr', function () {
-      if ( $(this).hasClass('selected') ) {
-        $('.fa-trash').click( function () {
-          table.row().remove().draw();
-          $('[data-toggle="popover"]').popover(); 
-        } );
+    var checkBoxes = $("#spreadsheet-data tbody .selected input[name=record]");
+
+    if ( $(this).hasClass('selected') ) {
         $(this).removeClass('selected');
-        $('#select-me').removeClass('selected');
-      }
-      else {
-          table.$('tr.selected').removeClass('selected');
-          $(this).addClass('selected');
-          $("#select-me").addClass('selected');     
-      }
-  } );
-} );
+        $('.checked-row').attr('checked',false);
+
+        $('.fa-trash').hover( function(){
+          $('[data-toggle="popover"]').popover(); 
+      });
+      $('.fa-trash').click( function () {
+        table.row().remove().draw();
+      });
+    } else {
+      $(this).addClass('selected');
+      $('.checked-row').attr('checked',true);
+    };
+  });
+});
 
 // clear table data
 $(document).ready(function() {

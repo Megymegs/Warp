@@ -1,6 +1,8 @@
 body {
     background-image: linear-gradient(to bottom right,#AA076B,#61045F,#AA076B);
     color: $primary-color!important;
+    font-family: $font-family-base!important;
+
 
     .holder {
         background-color: $secondary-color;
@@ -36,10 +38,6 @@ body {
     }
 }
 
-table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
-    text-align: center!important;
-}
-
 #spreadsheet-data_wrapper {
     position: relative;
     display: block;
@@ -52,9 +50,11 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
 
 .dataTables_wrapper .dataTables_filter label {
     white-space: unset !important;
-    text-align: unset !important;
     display: block !important;
-    text-align: right !important;
+    @include media-breakpoint-up(sm){
+
+        text-align: right !important;
+    }
 }
 
 .dataTables_wrapper .dataTables_filter input {
@@ -65,13 +65,6 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
     margin: 2.5% 0 2% auto;
     padding: 0 2.5%;
     border-color: $border;
-}
-
-.page-count {
-    width: 10%;
-    border-radius: 0.5em;
-    border: 1px solid $border;
-    box-shadow: $box-shadows;
 }
 
 .dataTables_wrapper .dataTables_length label{
@@ -118,6 +111,9 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
     display: flex;
     display: -webkit-flex;
     justify-content: space-between;
+    flex-wrap: nowrap;
+
+    
     span {
         display: none;
     }
@@ -129,8 +125,13 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
 }
 
 .selected {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.75)!important;
 }
+
+.selected:hover {
+    background-color: white!important;
+}
+
 
 .table-hover {
     tbody tr {
@@ -138,14 +139,27 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
             color: black;
             .delete {
                 color: black;
-            }    
+            }
         }
     }
 }
 
-.gift-card {
-    background-color: $secondary-color;
+.add-census {
+    background-color: $contrast-color;
     display: none;
+
+    .modal-content {
+        padding: 1em;
+        background-image: linear-gradient(to bottom right,#AA076B,#61045F,#AA076B);
+        border: 1px solid $border;
+
+        .content-holder {
+            background-color: $secondary-color;
+            border: 1px solid $border;
+            border-radius: 0.5em;
+        }
+    }
+
     .step-1 {
         display: flex;
         justify-content: space-between;
@@ -160,6 +174,11 @@ table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:
     .step-3 {
         display: none;
     }
+    
+    .done:hover {
+        opacity: 1!important;
+    }
+
 }
 
 // custom icons for sorting
@@ -184,6 +203,10 @@ table.dataTable thead .sorting_desc:after{
     outline: 0;
 }
 
+.paginate_button {
+    padding: 0;
+}
+
 .pagination>li>a:hover {
     background-color: $white!important;
     color: $black!important;
@@ -196,4 +219,50 @@ table.dataTable thead .sorting_desc:after{
 .pagination>.disabled>a, .pagination>.disabled>a:hover {
     color: $secondary-color!important;
     background-color: rgba(0, 0, 0, 0.75)!important;
+}
+
+.table>thead>tr>th {
+    letter-spacing: 0.08em;
+}
+
+.table>thead>tr>th:last-child, table.dataTable tbody td.select-checkbox:before {
+    display: none;
+    
+    @include media-breakpoint-up (lg){
+        display: table-cell;
+    }
+}
+
+table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child {
+    @include media-breakpoint-up (lg){
+        text-align: center!important;
+    }
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details {
+    width: 100%;
+}
+
+table.dataTable tbody td.select-checkbox:before {
+    border: 1px solid $white!important;   
+}
+
+table.dataTable tbody td.select-checkbox:after {
+    display: none!important;
+    @include media-breakpoint-up (lg){
+        display: table-cell;
+    }    
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+    top: 1.2em!important;
+    left: 50%!important;
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span {
+    display: none;
+
+    @include media-breakpoint-up (sm) {
+        display: list-item;
+    }
 }

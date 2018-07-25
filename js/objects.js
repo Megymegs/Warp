@@ -1,6 +1,6 @@
 var dataSet = [
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "System Architect", 
         "Edinburgh", 
         "5421", 
@@ -9,7 +9,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Accountant", 
         "Tokyo", 
         "8422", 
@@ -18,7 +18,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Junior Technical Author", 
         "San Francisco", 
         "1562", 
@@ -27,7 +27,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Senior Javascript Developer", 
         "Edinburgh", 
         "6224", 
@@ -36,7 +36,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Accountant", 
         "Tokyo", 
         "5407", 
@@ -45,7 +45,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Integration Specialist", 
         "New York", 
         "4804", 
@@ -54,7 +54,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Sales Assistant", 
         "San Francisco", 
         "9608", 
@@ -63,7 +63,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Integration Specialist", 
         "Tokyo", 
         "6200", 
@@ -72,7 +72,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Javascript Developer", 
         "San Francisco", 
         "2360", 
@@ -81,7 +81,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Software Engineer", 
         "Edinburgh", 
         "1667", 
@@ -90,7 +90,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Office Manager", 
         "London", 
         "3814", 
@@ -99,7 +99,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Support Lead", 
         "Edinburgh", 
         "9497", 
@@ -108,7 +108,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Regional Director", 
         "San Francisco", 
         "6741", 
@@ -117,7 +117,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Senior Marketing Designer", 
         "London", 
         "3597", 
@@ -126,7 +126,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Regional Director", 
         "London", 
         "1965", 
@@ -135,7 +135,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Marketing Designer", 
         "London", 
         "1581", 
@@ -144,7 +144,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Chief Financial Officer (CFO)", 
         "New York", 
         "3059", 
@@ -153,7 +153,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Systems Administrator", 
         "New York", 
         "1721", 
@@ -162,7 +162,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Software Engineer", 
         "London", 
         "2558", 
@@ -171,7 +171,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Personnel Lead", 
         "Edinburgh", 
         "2290", 
@@ -180,7 +180,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Development Lead", 
         "New York", 
         "1937", 
@@ -189,7 +189,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Chief Marketing Officer (CMO)", 
         "New York", 
         "6154", 
@@ -198,7 +198,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Developer", 
         "Edinburgh", 
         "8822", 
@@ -207,7 +207,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Regional Director", 
         "Singapore", 
         "9239", 
@@ -216,7 +216,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Software Engineer", 
         "San Francisco", 
         "1314", 
@@ -225,7 +225,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Chief Operating Officer (COO)", 
         "San Francisco", 
         "2947", 
@@ -234,7 +234,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Regional Marketing", 
         "Tokyo", 
         "8899", 
@@ -243,7 +243,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Integration Specialist", 
         "Sidney", 
         "2769", 
@@ -252,7 +252,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Developer", 
         "London", 
         "6832", 
@@ -261,7 +261,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Technical Author", 
         "London", 
         "3606", 
@@ -270,7 +270,7 @@ var dataSet = [
         '<a href="#" tabIndex="5" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Double click to delete row."><i class="fas fa-trash delete"></i></a>'
 ],
     [
-        "<input type='checkbox' name='record'>",
+        "",
         "Marketing Designer", 
         "San Francisco", 
         "5384", 

@@ -2,12 +2,13 @@
 // Colours
 $primary-color: #000000;
 $secondary-color : #f0f0f075;
-$contrast-color : #7426af;
+$contrast-color : rgba(0, 0, 0, 0.42);
 $border : pink;
 $box-shadows : 0 0 1px $contrast-color;
 
 // overwriting bootstrap class
 $base : $white;
+$font-family-base: 'Libre Baskerville', serif;
 
 // Overwriting bootstrap Grid breakpoints
 $grid-breakpoints: ( 
@@ -15,8 +16,10 @@ $grid-breakpoints: (
   sm: 676px, 
   md: 868px, 
   lg: 1092px, 
-  xl: 1400px);
-.row {
+  xl: 1400px
+  );
+
+  .row {
   margin: 0 !important;
 }
 

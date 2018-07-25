@@ -1,5 +1,5 @@
 <?php
-echo $_GET["<input type='checkbox' name='record'>"];
+echo $_GET["<input type='checkbox' name='record' class='checked-row'>"];
 echo $_GET["Job"];
 echo $_GET["Location"];
 echo $_GET["Attendees"];

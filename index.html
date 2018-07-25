@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 </head>
 
 <body class="container-fluid d-flex pt-5 pb-5">
-    <div class="holder w-100 rounded">
+    <div class="holder w-100 rounded pb-5">
         <div class="container-fluid pt-2">
             <section class="spreadsheet">
                 <div class="d-flex">
@@ -84,48 +85,56 @@
         <table id="spreadsheet-data" class="table table-bordered dt-responsive nowrap w-100 table-hover rounded">
         </table>
     
-        <div class="modal fade gift-card m-auto rounded" tabindex="-1" role="dialog">
+        <div class="modal fade add-census m-auto rounded" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content step-1">
-                    <div class="modal-header d-block">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4 class="modal-title">Bulk Create Gift Cards - Step 1</h4>
-                        <h5>Please select a design below....</h5>
-                    </div>
-                    <form class="modal-body modal-body-1 d-flex p-5" action="get-method.php" method="get">
-                        <input id="jobTitle" value="" type="text" name="Job" placeholder="Job Title">
-                        <input id="location" value="" type="text" name="Location" placeholder="Location">
-                    </form>
-                    <div class="modal-footer">
-                        <button type="button" class="next next-modal" aria-label="next">Next</button>
+                    <div class="content-holder">
+                        <div class="modal-header d-block">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 class="modal-title">Add New Census - Step 1</h4>
+                            <h5>Please add job title and location below....</h5>
+                        </div>
+                        <form class="modal-body modal-body-1 d-flex p-5" action="get-method.php" method="get">
+                            <input id="jobTitle" value="" type="text" name="Job" placeholder="Job Title">
+                            <input id="location" value="" type="text" name="Location" placeholder="Location">
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" class="next next-modal" aria-label="next">Next</button>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-content step-2">
-                    <div class="modal-header d-block">
-                        <button type="button" class="previous back-modal" aria-label="previous">Back</button>
-                    </div>
-                    <div class="modal-body p-5" action="get-method.php" method="get">
-                        <input value="" id="attendees" type="number" name="Attendees" placeholder="Amount of attendees" class="mb-5 mr-5">
-                        <input value="" id="dateOf" type="number" name="Date" placeholder="Date of censense" class="mb-5 mr-5">
-                        <input value="" id="income" type="number" name="Salary" placeholder="Average monthly income" class="mb-5 mr-5">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">Cancel
-                        </button>
-                        <button type="button" class="next next-modal-1" aria-label="next">Create</button>
+                    <div class="content-holder">
+                        <div class="modal-header d-block">
+                            <button type="button" class="previous back-modal" aria-label="previous">Back</button>
+                            <h5>Please add no. of attendees, date of census and par salary below....</h5>
+                        </div>
+                        <div class="modal-body p-5" action="get-method.php" method="get">
+                            <input value="" id="attendees" type="number" name="Attendees" placeholder="Amount of attendees" class="mb-5 mr-5">
+                            <input value="" id="dateOf" type="number" name="Date" placeholder="Date of censense" class="mb-5 mr-5">
+                            <input value="" id="income" type="number" name="Salary" placeholder="Average monthly income" class="mb-5 mr-5">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">Cancel
+                            </button>
+                            <button type="button" class="next next-modal-1" aria-label="next">Create</button>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-content step-3">
-                    <div class="modal-header d-block">
-                        <button type="button" class="previous back-modal-1" aria-label="previous">Back</button>
-                    </div>
-                    <div class="modal-body p-5" id="preview-row-data">
-                        <?php include 'php/get-method.php';?>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="close btn done next" data-destory="modal" aria-label="Close" value="Done">
+                    <div class="content-holder">
+                        <div class="modal-header d-block">
+                            <button type="button" class="previous back-modal-1" aria-label="previous">Back</button>
+                            <h5>Confirm data inputted</h5>
+                        </div>
+                        <div class="modal-body p-5" id="preview-row-data">
+                            <?php include 'php/get-method.php';?>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="close btn done btn-success" data-destory="modal" aria-label="Close" value="Done">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -142,4 +151,5 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
 </body>
